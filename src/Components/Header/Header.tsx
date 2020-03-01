@@ -39,7 +39,7 @@ export const Header: React.FC<Props> = ({ greeting, person }) => {
 
   return(
     <div ref={divRef}>
-      <h1>Here are some things done with TypeScript</h1>
+      <h1>TypeScript Todo List</h1>
       <h1>{greeting} {person.firstName} {person.lastName}! Here is your Todo List:</h1>
     </div>
   )
