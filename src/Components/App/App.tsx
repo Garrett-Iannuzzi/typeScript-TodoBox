@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Header } from '../Header/Header';
 import { TodoList } from '../TodoList/TodoList';
+import { TodoForm } from '../TodoForm/TodoForm';
 
 const initialTodos: Array<Todo> = [
   { text: 'Be fresh', complete: true },
@@ -26,6 +27,13 @@ const App: React.FC = () => {
     setTodos(newTodos)
   }
 
+  const addTodo = (newTodo: string) => {
+    //Here TS helps, I was reminded I can't just spread in the string but I need to spread in an obj
+    newTodo.trim() !== '' && 
+      setTodos([...todos, { text: newTodo, complete: false }])
+    //The trim() method removes whitespace from both ends of a string
+  }
+
   return (
     <div className="App">
       <Header 
@@ -33,6 +41,7 @@ const App: React.FC = () => {
         person={{ firstName: 'Travis', lastName: 'TheDude' }}
       />
       <TodoList todos={todos} toggleTodo={toggleTodo}/>
+      <TodoForm addTodo={addTodo}/>
     </div>
   );
 }
