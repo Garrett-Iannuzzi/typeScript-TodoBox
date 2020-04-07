@@ -4,7 +4,7 @@ import { Header } from '../Header/Header';
 import { TodoList } from '../TodoList/TodoList';
 import { TodoForm } from '../TodoForm/TodoForm';
 
-const initialTodos: Array<Todo> = [
+export const initialTodos: Array<Todo> = [
   { text: 'Be fresh', complete: true },
   { text: 'Hit the Edgewater Market', complete: false },
 ]
@@ -46,7 +46,6 @@ const App: React.FC = () => {
   );
 }
 
-export default App;
 
 //When creating your file structure react files are .tsx and non react files are .ts
 //You can right click on things like useState() to see TS information
